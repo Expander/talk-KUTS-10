@@ -252,19 +252,22 @@ $ ./createmodel --name=HSSUSY
 $ ./configure --with-models=HSSUSY
 $ make -j4
   \end{lstlisting} % $
+  \vspace{0.5em}
   Run the spectrum generator from the command line:
   \begin{lstlisting}
 $ cd models/HSSUSY/
 $ ./run_HSSUSY.x \
     --slha-input-file=LesHouches.in.HSSUSY
   \end{lstlisting}
+  \vspace{0.5em}
   Run the spectrum generator from Mathematica:
   \begin{lstlisting}
 $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   \end{lstlisting} % $
 \end{frame}
 
-\section{Fixed-order}
+\section{MSSM Spectrum Generators}
+\subsection{Fixed-order}
 
 \begin{frame}{Fixed-order}
   \begin{center}
@@ -283,12 +286,12 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   $\beta_i$: \mycite{0308231, 0408128}
 \end{frame}
 
-\section{EFTs}
-\subsection{MSSM -- SM (HSSUSY)}
-\subsection{MSSM -- split-SUSY}
-\subsection{MSSM -- 2HDM-II -- SM}
-\subsection{MSSM -- split-2HDM-II -- split-SUSY}
-\subsection{MSSM -- split-2HDM-II -- 2HDM-II}
+\subsection{EFTs}
+\subsubsection{MSSM -- SM (HSSUSY)}
+\subsubsection{MSSM -- split-MSSM}
+\subsubsection{MSSM -- 2HDM-II -- SM}
+\subsubsection{MSSM -- split-2HDM-II -- split-MSSM}
+\subsubsection{MSSM -- split-2HDM-II -- 2HDM-II}
 
 \begin{frame}{EFTs: MSSM -- SM (HSSUSY)}
   \begin{center}
@@ -311,7 +314,7 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364}
 \end{frame}
 
-\begin{frame}{EFTs: MSSM -- split-SUSY}
+\begin{frame}{EFTs: MSSM -- split-MSSM}
   \begin{center}
   \begin{tikzpicture}
     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
@@ -320,7 +323,7 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
     \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
       $M_h^2$ at $O(\text{1L} + (\at+\as)\at + \at\as^2)$
     };
-    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{split-MSSM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
       $y_t$ at $O(\text{1L} + \as^2)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L})$};
     \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{2L RGEs} (-1,4);
   \end{tikzpicture}
@@ -331,7 +334,7 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   \phantom{$\beta_i$}
 \end{frame}
 
-\section{FlexibleEFTHiggs}
+\subsection{FlexibleEFTHiggs}
 
 \begin{frame}{FlexibleEFTHiggs}
   \begin{center}
@@ -363,7 +366,9 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
 \end{frame}
 
 \begin{frame}[noframenumbering]
-  Backup
+  \begin{center}
+    \Huge Backup
+  \end{center}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Determination of $g_3(M_Z)$}
@@ -377,6 +382,10 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
       - \Delta\alpha_{\text{s}}^{3L}(M_Z)
     }
   \end{align*}
+  \\\vspace{2em}
+  SM: \mycite{9305305, 9707474, 9708255, 0004189}\\
+  split-MSSM: \mycite{9305305, 9707474, 9708255, 0004189}\\
+  MSSM: \mycite{0509048, 0810.5101, 1009.5455}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Determination of $y_t(M_Z)$}
@@ -390,6 +399,9 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
     &\phantom{={}} \qquad\quad
       + \Delta m_t^{1L} + \Delta m_t^{2L} + \Delta m_t^{3L} \Big]
   \end{align*}
+  SM: \mycite{9912391, 1205.2892} \\
+  split-MSSM: \mycite{1312.5220}\\
+  MSSM: \mycite{0210258, 0507139}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Determination of $v(M_Z)$}
