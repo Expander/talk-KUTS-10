@@ -136,9 +136,9 @@
 \makeatother
 \usecolortheme{tud}
 
-\title{KUTS paper -- Chapter 4 Hybrid}
+\title{$M_h$ in FlexibleSUSY 2.0}
 
-\author[Alexander Voigt]{Henning Bahl, Alexander Voigt}
+\author[Alexander Voigt]{Peter Athron, Alexander Voigt}
 
 \date{KUTS-8 Paris\\[1em] 24--26/01/2018}
 
@@ -243,135 +243,60 @@
   \tableofcontents
 \end{frame}
 
-\section{Motivation}
+\section{Fixed-order}
 
-\begin{frame}{1 Motivation}
+\begin{frame}{Fixed-order}
   \begin{center}
-    \begin{tabular}{lll}
-      \toprule
-      approach    & $\MS \lesssim 1$--$2\eh{TeV}$ & $\MS \gtrsim 1$--$2\eh{TeV}$ \\
-      \midrule
-      fixed order & \ok & \notok \\
-      EFT         & \notok & \ok \\
-      hybrid      & \ok & \ok \\
-      \bottomrule
-    \end{tabular}
-  \end{center}
-  To illustrate position of ``intermediate region'', show:
-  \begin{center}
-    \includegraphics[width=0.5\textwidth]{plots/kuts/FH_hybrid}
+  \begin{tikzpicture}
+    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
+    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
+      $M_h^2$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\atau^2) + O((\at + \ab)\as^2)$};
+    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.2cm,black]{MSSM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+      $y_{t,b}$ at $O(\text{1L} + \as^2)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + (\at + \ab)\as)$};
+    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
+  \end{tikzpicture}
   \end{center}
 \end{frame}
 
-\section{Methods}
+\section{EFTs}
+\subsection{MSSM -- SM (HSSUSY)}
+\subsection{MSSM -- split-SUSY}
+\subsection{MSSM -- 2HDM-II -- SM}
+\subsection{MSSM -- split-2HDM-II -- split-SUSY}
+\subsection{MSSM -- split-2HDM-II -- 2HDM-II}
 
-\begin{frame}{2 Methods}
-  \begin{itemize}
-  \item \FH: \mycite{1312.4937, 1608.01880, 1706.00346}
-    \begin{align*}
-      M_h^2 = (M_h^2)_{\text{fixed-order}} - (M_h^2)_{\text{logs}} + (M_h^2)_{\text{resummed logs}}
-    \end{align*}\\[-0.5em]
-    \begin{itemize}
-    \item[\ok] Pro: 2L accuracy available
-    \item[\notok] Contra: currently only MSSM
-    \end{itemize}
-  \item \feft and \SARAH/\SPheno: \mycite{1609.00371, 1703.03267, 1710.03760}
-    \begin{align*}
-      (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\MSSM} \qquad \text{at } Q = \MS \\
-      \Rightarrow\quad \lambda(\MS) &= \frac{1}{v^2} \left[ (M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM} \right]
-    \end{align*}\\[-0.5em]
-    \begin{itemize}
-    \item[\ok] Pro: not restricted to MSSM
-    \item[\notok] Contra: tricky to extend to NNLO + NNLL level
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\section{Status}
-
-\begin{frame}{3 Status}
-  Currently available corrections:\\[1em]
-  \begin{itemize}
-  \item \FH
-    \begin{itemize}
-    \item Fixed-order: full LO + NLO, $O(\as\at,\as\ab,(\at + \ab)^2)$
-    \item EFT: full LL + NLL, $O(\as,\at)$ NNLL; EWino threshold
-    \end{itemize}
-  \item \feft
-    \begin{itemize}
-    \item Fixed-order: full LO + NLO
-    \item EFT: full LL + NLL
-    \end{itemize}
-  \item \SARAH/\SPheno
-    \begin{itemize}
-    \item Fixed-order: full LO + NLO, $O(\as \at, \as \ab, (\at + \ab)^2)$
-      \\\avnote{to be checked}
-    \item EFT: full LL \avnote{+ NLL?}
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\section{Advances during KUTS}
-
-\begin{frame}{4 Advances during KUTS}
-  \begin{itemize}
-  \item \FH:
-    \begin{itemize}
-    \item EW contributions, gaugino thresholds, NNLL resummation \mycite{1608.01880}
-    \item investigation of large differences to other codes \mycite{1706.00346}
-    \item \avnote{more?}
-  \end{itemize}
-  \item \feft:
-    \begin{itemize}
-    \item implementation of hybrid method \mycite{1609.00371}
-    \item improved to NLL accuracy \mycite{1710.03760}
-  \end{itemize}
-  \item \SARAH/\SPheno:
-    \begin{itemize}
-    \item implementation of hybrid method \mycite{1703.03267}
-    \end{itemize}
-  \end{itemize}
-\end{frame}
-
-\section{Theoretical uncertainties}
-
-\begin{frame}{5 Theoretical uncertainties}
-  Give prescription and estimate of uncertainties of:
-  \begin{itemize}
-  \item fixed-order calculation
-  \item EFT calculation
-  \item hybrid calculation
-  \end{itemize}
-  \vspace{1em}
-  \emph{Expectations:}
-  \begin{itemize}
-  \item fixed-order uncertainty increases with $\MS$
-  \item EFT uncertainty decreases with $\MS$
-  \item EFT calculation more precise than fixed-order for
-    $\MS \gtrsim 1$--$2\eh{TeV}$
-  \item hybrid uncertainty is smaller or similar to EFT / fixed-order
-  \item hybrid uncertainty is nearly constant for all $\MS$
-  \end{itemize}
-\end{frame}
-
-\begin{frame}{5 Theoretical uncertainties}
+\begin{frame}{EFTs: MSSM -- SM (HSSUSY)}
   \begin{center}
-    \includegraphics[width=0.35\textwidth]{plots/kuts//Mh_MS_TB-5_Xt-0}
-    \includegraphics[width=0.35\textwidth]{plots/kuts//Mh_MS_TB-5_Xt--2}\\
-    \includegraphics[width=0.35\textwidth]{plots/kuts//DMh_MS_TB-5_Xt-0}
-    \includegraphics[width=0.35\textwidth]{plots/kuts//DMh_MS_TB-5_Xt--2}
+  \begin{tikzpicture}
+    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
+    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
+      $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\atau^2)$};
+    \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
+      $M_h^2$ at $O(\text{1L} + (\at+\as)\at)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2)$
+    };
+    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+      $y_t$ at $O(\text{1L} + \as^2 + \as^3)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + \as^3)$};
+    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
+  \end{tikzpicture}
   \end{center}
 \end{frame}
 
-\section{Prospects}
+\section{FlexibleEFTHiggs}
 
-\begin{frame}{6 Prospects}
-  \begin{itemize}
-  \item Advance \feft to NNLO + NNLL
-  \item Improvement on theoretical uncertainties
-  \item Further low-energy models (not only SM as EFT)
-  \item Further high-energy models (not only MSSM as UV theory)
-  \end{itemize}
+\begin{frame}{FlexibleEFTHiggs}
+  \begin{center}
+  \begin{tikzpicture}
+    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
+    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
+      $\lambda$ at $O(\text{1L} + \text{all } v^2/\MS^2)$};
+    \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
+      $M_h^2$ at $O(\text{1L} + (\at+\as)\at)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2)$
+    };
+    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+      $y_t$ at $O(\text{1L} + \as^2 + \as^3)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + \as^3)$};
+    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
+  \end{tikzpicture}
+  \end{center}
 \end{frame}
 
 \end{document}
