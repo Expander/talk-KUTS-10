@@ -362,4 +362,43 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   \end{center}
 \end{frame}
 
+\begin{frame}[noframenumbering]
+  Backup
+\end{frame}
+
+\begin{frame}[noframenumbering]{Determination of $g_3(M_Z)$}
+  \emph{Input:} \ \ $\alpha_{\text{s}}^{\SM(5)}(M_Z) = 0.1185$\\[1em]
+  $\rightarrow$
+  \begin{align*}
+    \alpha_{\text{s}}^{\SM}(M_Z) &=
+    \frac{\alpha_{\text{s}}^{\SM(5)}(M_Z)}{1
+      - \Delta\alpha_{\text{s}}^{1L}(M_Z)
+      - \Delta\alpha_{\text{s}}^{2L}(M_Z)
+      - \Delta\alpha_{\text{s}}^{3L}(M_Z)
+    }
+  \end{align*}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Determination of $y_t(M_Z)$}
+  \emph{Input:} \ \ $M_t = 173.34\eh{GeV}$\\[1em]
+  $\rightarrow$
+  \begin{align*}
+    m_{t}(M_Z) &= M_t +
+    \re\Sigma_{t}^{S}(M_Z) \\
+    &\phantom{={}} + M_t \Big[ \re\Sigma_{t}^{L}(M_Z) +
+    \re\Sigma_{t}^{R}(M_Z) \\
+    &\phantom{={}} \qquad\quad
+      + \Delta m_t^{1L} + \Delta m_t^{2L} + \Delta m_t^{3L} \Big]
+  \end{align*}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Determination of $v(M_Z)$}
+  \emph{Input:} \ \ $M_Z = 91.1876\eh{GeV}$\\[1em]
+  $\rightarrow$
+  \begin{align*}
+    v(M_Z) &= \frac{2 m_Z(M_Z)}{\sqrt{g_Y^2(M_Z) + g_2^2(M_Z)}} \\
+    m_Z(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,Q=M_Z)}
+  \end{align*}
+\end{frame}
+
 \end{document}
