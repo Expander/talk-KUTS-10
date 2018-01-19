@@ -117,6 +117,7 @@
 \newcommand{\atau}{\alpha_\tau}
 \newcommand{\as}{\alpha_s}
 \newcommand{\avnote}[1]{\textcolor{blue}{[#1]}}
+\DeclareMathOperator{\Eigenvalue}{Eigenvalue}
 
 % set look of slides
 \usetheme{Madrid}
@@ -411,6 +412,27 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
     v(M_Z) &= \frac{2 m_Z(M_Z)}{\sqrt{g_Y^2(M_Z) + g_2^2(M_Z)}} \\
     m_Z(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,Q=M_Z)}
   \end{align*}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Determination of $M_h^2$ in the SM and split-MSSM}
+  Iterate until $p^2 = M_h^2$:
+  \begin{align*}
+    M_h^2 &= m_h^2 + (\Delta m_h^2)_{1L}(p^2)
+            + (\Delta m_h^2)_{2L}(p^2) +(\Delta m_h^2)_{3L}
+  \end{align*}
+  SM: \mycite{1205.6497, 1504.05200, 1407.4336}\\
+  split-MSSM: \mycite{1205.6497, 1312.5220}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Determination of $M_h^2$ in the MSSM}
+  Iterate until $p^2 = M_h^2$:
+  \begin{align*}
+    M_h^2 &= \Eigenvalue\Big[
+            m_h^2 + (\Delta m_h^2)_{1L}(p^2)
+            + (\Delta m_h^2)_{2L} + (\Delta m_h^2)_{3L}
+            \Big]
+  \end{align*}
+  MSSM: \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
 \end{frame}
 
 \end{document}
