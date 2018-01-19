@@ -243,6 +243,27 @@
   \tableofcontents
 \end{frame}
 
+\section{Building a spectrum generator with FlexibleSUSY}
+
+\begin{frame}[fragile]{Building a spectrum generator with FlexibleSUSY}
+  Building the spectrum generator:
+  \begin{lstlisting}
+$ ./createmodel --name=HSSUSY
+$ ./configure --with-models=HSSUSY
+$ make -j4
+  \end{lstlisting} % $
+  Run the spectrum generator from the command line:
+  \begin{lstlisting}
+$ cd models/HSSUSY/
+$ ./run_HSSUSY.x \
+    --slha-input-file=LesHouches.in.HSSUSY
+  \end{lstlisting}
+  Run the spectrum generator from Mathematica:
+  \begin{lstlisting}
+$ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
+  \end{lstlisting} % $
+\end{frame}
+
 \section{Fixed-order}
 
 \begin{frame}{Fixed-order}
