@@ -438,13 +438,22 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
 \end{frame}
 
 \begin{frame}[noframenumbering]{Determination of $M_h^2$ in the SM and split-MSSM}
+  \emph{SM}:
   Iterate until $p^2 = M_h^2$:
   \begin{align*}
     M_h^2 &= m_h^2 + (\Delta m_h^2)_{1L}(p^2)
             + (\Delta m_h^2)_{2L}(p^2) +(\Delta m_h^2)_{3L}
   \end{align*}
-  SM: $O(\text{1L} + (\at+\as)\at + (\at^2 + \at\as + \as^2)\at)$\\
-  \hspace{2em} \mycite{1205.6497, 1504.05200, 1407.4336}\\
+  $O(\text{1L} + (\at+\as)\at + (\at^2 + \at\as + \as^2)\at)$\\
+  \mycite{1205.6497, 1504.05200, 1407.4336}\\
+  Note: $O(\at^3)$ incomplete due to missing $p^2$-dependence of $O(\at^2)$
+  \\[2em]
+  \emph{split-MSSM}:
+  Iterate until $p^2 = M_h^2$:
+  \begin{align*}
+    M_h^2 &= m_h^2 + (\Delta m_h^2)_{1L}(p^2)
+            + (\Delta m_h^2)_{2L} +(\Delta m_h^2)_{3L}
+  \end{align*}
   split-MSSM: $O(\text{1L} + (\at+\as)\at + \at\as^2)$
   \mycite{1205.6497, 1312.5220}
 \end{frame}
