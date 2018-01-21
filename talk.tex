@@ -373,6 +373,28 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   \end{center}
 \end{frame}
 
+\begin{frame}[noframenumbering]{Uncertainty estimate}
+  Fixed-order calculation (\texttt{FS+H}):
+  \begin{itemize}
+  \item vary $Q_\pole \in [\MS/2, 2\MS]$
+  \item $\alpha^{1L}_s(M_Z)$ vs.\ $\alpha^{2L}_s(M_Z)$
+  \end{itemize}
+  EFT calculation (\texttt{HSSUSY}):
+  \begin{itemize}
+  \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
+  \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
+  \item $\lambda(\MS)$ vs.\ $\lambda(\MS) + v^2/\MS^2$ \hfill [EFT uncertainty]
+  \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
+  \item $y_t^{\SM}(\MS)$ vs.\ $y_t^{\MSSM}(\MS)$ \hfill [SUSY uncertainty]
+  \end{itemize}
+  Hybrid calculation (\texttt{FlexibleEFTHiggs}):
+  \begin{itemize}
+  \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
+  \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
+  \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
+  \end{itemize}
+\end{frame}
+
 \begin{frame}[noframenumbering]{Determination of $g_3(M_Z)$}
   \emph{Input:} \ \ $\alpha_{\text{s}}^{\SM(5)}(M_Z) = 0.1185$\\[1em]
   $\rightarrow$
@@ -435,28 +457,5 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   \end{align*}
   MSSM: \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
 \end{frame}
-
-\begin{frame}[noframenumbering]{Uncertainty estimate}
-  Fixed-order calculation (\texttt{FS+H}):
-  \begin{itemize}
-  \item vary $Q_\pole \in [\MS/2, 2\MS]$
-  \item $\alpha^{1L}_s(M_Z)$ vs.\ $\alpha^{2L}_s(M_Z)$
-  \end{itemize}
-  EFT calculation (\texttt{HSSUSY}):
-  \begin{itemize}
-  \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
-  \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
-  \item $\lambda(\MS)$ vs.\ $\lambda(\MS) + v^2/\MS^2$ \hfill [EFT uncertainty]
-  \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
-  \item $y_t^{\SM}(\MS)$ vs.\ $y_t^{\MSSM}(\MS)$ \hfill [SUSY uncertainty]
-  \end{itemize}
-  Hybrid calculation (\texttt{FlexibleEFTHiggs}):
-  \begin{itemize}
-  \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
-  \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
-  \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
-  \end{itemize}
-\end{frame}
-
 
 \end{document}
