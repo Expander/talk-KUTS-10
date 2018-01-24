@@ -466,6 +466,30 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   \end{align*}
 \end{frame}
 
+\begin{frame}[noframenumbering]{Determination of $g_1$ and $g_2$ as in BPMZ}
+  \emph{Input:} \ \ $\aem^{\SM(5)}(M_Z) = 1/127.916$, $G_F = 1.1663787\cdot 10^{-5}\text{GeV}^2$\\[1em]
+  $\rightarrow$
+  \begin{align*}
+  \aem(M_Z) &=
+  \frac{\aem^{\SM(5)}(M_Z)}{1 - \Delta\aem^{1L}(M_Z)} 
+  \end{align*}
+  \begin{align*}
+    g_1(M_Z) &= \sqrt{\frac{5}{3}} \frac{\sqrt{4\pi\aem(M_Z)}}{\cos\theta_w(M_Z)} \,, &
+    g_2(M_Z) &= \frac{\sqrt{4\pi\aem(M_Z)}}{\sin\theta_w(M_Z)}
+  \end{align*}
+  \begin{align*}
+  \sin^2\theta_w \cos^2\theta_w =
+  \frac{\pi\,\aem}{\sqrt{2} M_Z^2 G_F (1-\delta_r)}
+  \end{align*}
+  \begin{align*}
+    \delta_r &= \hat\rho \frac{\re\Sigma_{W,T}(0)}{M_W^2} -
+    \frac{\re\Sigma_{Z,T}(M_Z^2)}{M_Z^2} + \delta_{\text{VB}} + \delta_r^{(2)} \\
+    \hat\rho &= \frac{1}{1-\Delta\hat\rho} , \qquad \Delta\hat\rho
+    = \re\Biggl[ \frac{\Sigma_{Z,T}(M_Z^2)}{\hat\rho\,M_Z^2} -
+    \frac{\Sigma_{W,T}(M_W^2)}{M_W^2}\Biggr] + \Delta\hat\rho^{(2)}
+  \end{align*}
+\end{frame}
+
 \begin{frame}[noframenumbering]{Determination of $M_h^2$ in the SM and split-MSSM}
   \emph{SM}:
   Iterate until $p^2 = M_h^2$:
