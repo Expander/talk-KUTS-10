@@ -117,6 +117,7 @@
 \newcommand{\ab}{\alpha_b}
 \newcommand{\atau}{\alpha_\tau}
 \newcommand{\as}{\alpha_s}
+\newcommand{\aem}{\alpha_\text{em}}
 \newcommand{\avnote}[1]{\textcolor{blue}{[#1]}}
 \DeclareMathOperator{\Eigenvalue}{Eigenvalue}
 
@@ -425,7 +426,7 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   MSSM: $O(\as + \as^2 + (\at + \ab)\as)$ \mycite{0509048, 0810.5101, 1009.5455}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Determination of $y_t(M_Z)$}
+\begin{frame}[noframenumbering]{Determination of $m_t(M_Z)$}
   \emph{Input:} \ \ $M_t = 173.34\eh{GeV}$\\[1em]
   $\rightarrow$
   \begin{align*}
@@ -439,6 +440,21 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   SM: $O(\text{1L} + \as^2 + \as^3)$ \mycite{9912391, 1205.2892} \\
   split-MSSM: $O(\text{1L} + \as^2)$ \mycite{1312.5220}\\
   MSSM: $O(\text{1L} + \as^2)$ \mycite{0210258, 0507139}
+\end{frame}
+
+\begin{frame}[noframenumbering]{Determination of $m_b^{\MSSM}(M_Z)$}
+  \emph{Input:} \ \ $m_b^{\SM(5),\MSbar}(m_b) = 4.18\eh{GeV}$\\[1em]
+  $\rightarrow$ running to $m_b^{\SM(5),\MSbar}(M_Z)$ at $O(\aem + \as^3)$\\[1em]
+  $\rightarrow$ convert to $m_b^{\SM(5),\DRbar}(M_Z)$ at $O(\aem + \as)$\\[1em]
+  $\rightarrow$
+  \begin{align*}
+    m_b(M_Z) &= \frac{m_b^{\SM(5),\DRbar}(M_Z)}{1 - \Delta m_b^{1L} - \Delta m_b^{2L}} \,, \\
+    \Delta m_b^{1L} &= \Sigma_{b}^S(p^2=(m_b^{\SM(5)})^2,M_Z)/m_b\\
+           &\phantom{={}}+ \Sigma_{b}^L(p^2=(m_b^{\SM(5)})^2,M_Z)
+             + \Sigma_{b}^R(p^2=(m_b^{\SM(5)})^2,M_Z)\\
+    \Delta m_b^{2L} &= \Delta m_b^{2L,\text{dec}} - \frac{\as}{3\pi}\Delta m_b^{1L}
+  \end{align*}
+  with $\Delta m_b^{2L,\text{dec}}$ at $O(\as^2)$ from \mycite{0707.0650, 0810.5101}
 \end{frame}
 
 \begin{frame}[noframenumbering]{Determination of $v(M_Z)$}
