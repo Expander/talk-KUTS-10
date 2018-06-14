@@ -121,6 +121,19 @@
 \newcommand{\aem}{\alpha_\text{em}}
 \newcommand{\avnote}[1]{\textcolor{blue}{[#1]}}
 \DeclareMathOperator{\Eigenvalue}{Eigenvalue}
+\newcommand{\SQCD}{\ensuremath{\scalefont{.8}\text{SQCD}}}
+\newcommand{\Qpole}{\ensuremath{Q_\text{pole}}}
+\newcommand{\Qmatch}{\ensuremath{Q_\text{match}}}
+\newcommand{\DMh}{\ensuremath{\Delta M_h^{(\texttt{SS+H})}}}
+\newcommand{\DMhQpole}{\ensuremath{\Delta M_h^{(\Qpole)}}}
+\newcommand{\DMhQmatch}{\ensuremath{\Delta M_h^{(\Qmatch)}}}
+\newcommand{\DMhMt}{\ensuremath{\Delta M_h^{(m_t)}}}
+\newcommand{\DMhAlphaS}{\ensuremath{\Delta M_h^{(\as)}}}
+\newcommand{\DMhAlphaEm}{\ensuremath{\Delta M_h^{(\aem)}}}
+\newcommand{\DMhHSSUSY}{\ensuremath{\Delta M_h^{(\HSSUSY)}}}
+\newcommand{\DMhHSSUSYytSM}{\ensuremath{\Delta M_h^{(y_t^\SM)}}}
+\newcommand{\DMhHSSUSYytMSSM}{\ensuremath{\Delta M_h^{(y_t^\MSSM)}}}
+\newcommand{\DMhEFT}{\ensuremath{\Delta M_h^{(v^2/\MS^2)}}}
 
 % set look of slides
 \usetheme{Madrid}
@@ -268,9 +281,59 @@
   $\beta_i$: \mycite{0308231, 0408128}
 \end{frame}
 
-\begin{frame}{Fixed-order calculation}
+\begin{frame}{Uncertainty estimate of the fixed-order calculation}
+  Inspired by \bigcite{1609.00371}, we consider 5 sources of
+  uncertainty:
+  \begin{align*}
+    \DMhQpole &= \max_{\Qpole\in[\MS/2,2\MS]}\left|M_h(\Qpole) - M_h(\MS)\right| \\
+    \DMhQmatch &= \max_{\Qmatch\in[M_Z/2,2M_Z]}\left|M_h(\Qmatch) - M_h(M_Z)\right| \\
+    \DMhMt &= \left|M_h(m_t^{(1)}) - M_h(m_t^{(2)})\right| \\
+    \DMhAlphaS &= \left| M_h(\as^{(1)}) - M_h(\as^{(2)}) \right|  \\
+    \DMhAlphaEm &= \left| M_h(\aem^{(1)}) - M_h(\aem^{(2)}) \right|
+  \end{align*}
+  Combination:
+  \begin{align*}
+    \DMh &= \DMhQpole + \DMhQmatch + \DMhMt + \DMhAlphaS + \DMhAlphaEm 
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Uncertainty estimate of the fixed-order calculation}
+  Calculation of the $m_t$ in two different ways as proposed in
+  \bigcite{1609.00371}:
+  \begin{align*}
+    m_t^{(1)} &=
+                M_t + \widetilde{\Sigma}_t^{(1),S} +
+                M_t \left[
+                \widetilde{\Sigma}_t^{(1),L} +
+                \widetilde{\Sigma}_t^{(1),R}
+                \right] \\
+              &\phantom{={}} + M_t
+                \left[\widetilde{\Sigma}_t^{(1),\SQCD}
+                + \widetilde{\Sigma}_t^{(2),\SQCD}
+                + \left(\widetilde{\Sigma}_t^{(1),\SQCD}\right)^2
+                \right]\\
+    m_t^{(2)} &=
+                M_t + \widetilde{\Sigma}_t^{(1),S} +
+                m_t \left[
+                \widetilde{\Sigma}_t^{(1),L} +
+                \widetilde{\Sigma}_t^{(1),R}
+                \right] \nonumber \\
+              &\phantom{={}} +
+                m_t
+                \left[\widetilde{\Sigma}_t^{(1),\SQCD} +
+                \widetilde{\Sigma}_t^{(2),\SQCD}
+                \right]
+  \end{align*}
+  Calculation of the $\as$ and $\aem$ in two different ways:
+  \begin{align*}
+    \as^{(1)}  &= \frac{\as^{\SM(5)}}{1 - \Delta^{(1)}\as - \Delta^{(2)}\as}\\
+    \as^{(2)}  &= \as^{\SM(5)} \left[1 + \Delta^{(1)}\as + (\Delta^{(1)}\as)^2 + \Delta^{(2)}\as\right]
+  \end{align*}
+\end{frame}
+
+\begin{frame}{Uncertainty estimate of the fixed-order calculation}
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{plots/kuts-9/SS_TB-20_Xt--sqrt6_individual}
+    \includegraphics[width=0.7\textwidth]{plots/kuts-9/SS_TB-20_Xt--sqrt6_individual}
   \end{center}
 \end{frame}
 
