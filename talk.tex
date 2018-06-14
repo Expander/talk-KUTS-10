@@ -61,6 +61,7 @@
 \newcommand{\xmark}{\ding{55}}%
 \newcommand{\fmfvcenter}[1]{\;\vcenter{\hbox{\fmfreuse{#1}}}\;}
 \newcommand{\eh}[1]{\,\mathsf{#1}}
+\newcommand{\GeV}{\eh{GeV}}
 \newcommand{\ok}{\textcolor{darkgreen}{\cmark}}
 \newcommand{\notok}{\textcolor{red}{\xmark}}
 \newcommand{\maybe}{\textcolor{gray}{\cmark}}
@@ -342,9 +343,34 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{How heavy can the lightest stop be?}
+  Derive an upper bound on $m_{\tilde{t}_1}$ in the MSSM parameter
+  region where:
+  \begin{enumerate}
+  \item The Higgs boson mass is in agreement with experiment
+    (including the theoretical uncertainty from the EFT calculation):
+    \begin{align*}
+      M_h = 125.09 \pm \Delta M_h^{(\texttt{HSSUSY})}
+    \end{align*}
+  \item There is no CCB minimum that is deeper than the EW vacuum
+    \bigcite{1407.4081}:
+    \begin{align*}
+      \frac{X_t^2}{m_{\tilde{Q}_3} m_{\tilde{u}_3}} < \left(4 - \frac{1}{\sin^2\beta}\right) \left(\frac{m_{\tilde{Q}_3}}{m_{\tilde{u}_3}} + \frac{m_{\tilde{u}_3}}{m_{\tilde{Q}_3}}\right)
+    \end{align*}
+  \end{enumerate}
+\end{frame}
+
+\begin{frame}{How heavy can the lightest stop be?}
+  Chose $\tan\beta = 1$ to make $(m_h^2)_{\text{tree}} = 0$
+  $\Rightarrow$ largest corrections from stops are required.
+  \\[1em]
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{{{plots/kuts-9/TB-1}}}\hfill
-    \includegraphics[width=0.49\textwidth]{{{plots/kuts-9/TB-1.2}}}
+    \begin{tabular}{cc}
+      $\tan\beta = 1$ & $\tan\beta = 1.2$ \\
+      \includegraphics[width=0.49\textwidth]{{{plots/kuts-9/TB-1}}} &
+      \includegraphics[width=0.49\textwidth]{{{plots/kuts-9/TB-1.2}}} \\
+      \textcolor{red}{$m_{\tilde{t}_1} \leq 3.7\cdot 10^{11}\GeV$} &
+      $m_{\tilde{t}_1} \leq 9.6\cdot 10^{10}\GeV$
+    \end{tabular}
   \end{center}
 \end{frame}
 
