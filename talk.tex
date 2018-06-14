@@ -139,15 +139,15 @@
 \makeatother
 \usecolortheme{tud}
 
-\title{$M_h$ in FlexibleSUSY 2.0}
+\title{Uncertainties of the $M_h$ fixed-order and EFT predictions in the MSSM}
 
-\author[Alexander Voigt]{Peter Athron, Alexander Voigt}
+\author[Alexander Voigt]{Benjamin Allanach, Alexander Voigt}
 
-\date{KUTS-8 Paris\\[1em] 24--26/01/2018}
+\date{KUTS-9 Würzburg\\[1em] 16--18/07/2018}
 
 % \institute[Aachen]{RWTH Aachen}
-\subject{FlexibleSUSY,MSSM,Higgs,FlexibleEFTHiggs}
-\keywords{FlexibleSUSY,MSSM,Higgs,FlexibleEFTHiggs}
+\subject{FlexibleSUSY,MSSM,Higgs,EFT}
+\keywords{FlexibleSUSY,MSSM,Higgs,EFT}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -241,44 +241,15 @@
   \titlepage  
 \end{frame}
 
-\begin{frame}{FlexibleSUSY -- a spectrum generator generator}
-  \begin{center}
-    \includegraphics[width=\textwidth]{images/FS.png}
-  \end{center}
-\end{frame}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{Contents}
   \tableofcontents
 \end{frame}
 
-\section{Building a spectrum generator with FlexibleSUSY}
-
-\begin{frame}[fragile]{Building a spectrum generator with FlexibleSUSY}
-  Building the spectrum generator:
-  \begin{lstlisting}
-$ ./createmodel --name=HSSUSY
-$ ./configure --with-models=HSSUSY
-$ make -j4
-  \end{lstlisting} % $
-  \vspace{0.5em}
-  Run the spectrum generator from the command line:
-  \begin{lstlisting}
-$ cd models/HSSUSY/
-$ ./run_HSSUSY.x \
-    --slha-input-file=LesHouches.in.HSSUSY
-  \end{lstlisting}
-  \vspace{0.5em}
-  Run the spectrum generator from Mathematica:
-  \begin{lstlisting}
-$ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
-  \end{lstlisting} % $
-\end{frame}
-
-\section{MSSM spectrum generators}
+\section{Compared $M_h$ calculations}
 \subsection{Fixed-order calculation}
 
-\begin{frame}{Fixed-order calculation (\texttt{NUHMSSMNoFVHimalaya})}
+\begin{frame}{Fixed-order calculation (\texttt{SOFTSUSY})}
   \begin{center}
   \begin{tikzpicture}
     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
@@ -296,13 +267,14 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
 \end{frame}
 
 \subsection{EFT calculation}
-\subsubsection{MSSM -- SM (\hssusy)}
-\subsubsection{MSSM -- split-MSSM}
-\subsubsection{MSSM -- 2HDM-II -- SM}
-\subsubsection{MSSM -- split-2HDM-II -- split-MSSM}
-\subsubsection{MSSM -- split-2HDM-II -- 2HDM-II}
 
-\begin{frame}{EFT calculation: MSSM -- SM (\texttt{HSSUSY})}
+\begin{frame}{EFT calculation (\texttt{HSSUSY})}
+  \begin{center}
+    \includegraphics[width=0.8\textwidth]{images/FS-HSSUSY.png}
+  \end{center}
+\end{frame}
+
+\begin{frame}{EFT calculation (\texttt{HSSUSY})}
   \begin{center}
   \begin{tikzpicture}
     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
@@ -323,67 +295,47 @@ $ math -run "<< \"models/HSSUSY/run_HSSUSY.m\""
   $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364}
 \end{frame}
 
-\begin{frame}{EFT calculation: MSSM -- split-MSSM (\texttt{SplitMSSM})}
+\section{Uncertainty estimates}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Fixed-order calculation}
+
+\begin{frame}{Fixed-order calculation}
   \begin{center}
-  \begin{tikzpicture}
-    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
-    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
-      $\lambda$ at $O(\text{1L} + \at\as)$};
-    \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
-      $M_h^2$ at $O(\text{1L} + (\at+\as)\at + \at\as^2)$
-    };
-    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{split-MSSM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
-      $y_t$ at $O(\text{1L} + \as^2)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L})$};
-    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{2L RGEs} (-1,4);
-  \end{tikzpicture}
+    \includegraphics[width=0.49\textwidth]{plots/kuts-9/SS_TB-20_Xt--sqrt6_individual}
   \end{center}
-  $\lambda$: \mycite{1407.4081}
-  $M_h^2$: \mycite{1205.6497, 1312.5220}\\
-  $y_t$: \mycite{1312.5220}\\
-  \phantom{$\beta_i$}
 \end{frame}
 
-\subsection{Hybrid calculation (FlexibleEFTHiggs)}
+\subsection{EFT calculation}
 
-\begin{frame}{Hybrid calculation: FlexibleEFTHiggs (\texttt{MSSMEFTHiggs})}
+\begin{frame}{EFT calculation}
   \begin{center}
-  \begin{tikzpicture}
-    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
-    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
-      $\lambda$ at $O(\text{1L} + \text{all } v^2/\MS^2)$};
-    \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
-      $M_h^2$ at $O(\text{1L} + (\at+\as)\at)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2)$
-    };
-    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
-      $y_t$ at $O(\text{1L} + \as^2 + \as^3)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + \as^3)$};
-    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
-  \end{tikzpicture}
+    \includegraphics[width=0.49\textwidth]{plots/kuts-9/HSSUSY_TB-20_Xt--sqrt6_individual}
   \end{center}
-  $M_h^2$: \mycite{1205.6497, 1504.05200, 1407.4336}\\
-  $y_t$: \mycite{9912391, 1205.2892},
-  $g_3$: \mycite{9305305, 9707474, 9708255, 0004189}\\
-  $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364}
 \end{frame}
 
-\section{Results}
+\section{When should the EFT be used?}
 
-\begin{frame}{Results}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{When should the EFT be used?}
   \begin{center}
-    \includegraphics[width=0.49\textwidth]{plots/kuts/Mh_MS_TB-5_Xt-0}\hfill
-    \includegraphics[width=0.49\textwidth]{plots/kuts/Mh_MS_TB-5_Xt--2}
+    \includegraphics[width=0.49\textwidth]{plots/kuts-9/Mh_MS_TB-20_Xt--sqrt6.pdf}
   \end{center}
 \end{frame}
 
 \begin{frame}[noframenumbering]
   \begin{center}
     \Huge Backup
-  \end{center}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Uncertainty estimate}
-  \begin{center}
-    \includegraphics[width=0.49\textwidth]{plots/kuts/DMh_MS_TB-5_Xt-0}\hfill
-    \includegraphics[width=0.49\textwidth]{plots/kuts/DMh_MS_TB-5_Xt--2}
   \end{center}
 \end{frame}
 
