@@ -418,7 +418,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{How heavy can the lightest stop be?}
-  Derive an upper bound on $m_{\tilde{t}_1}$ in the MSSM parameter
+  Derive an upper bound on $m_{\tilde{t}_1}$ from the MSSM parameter
   region where:
   \begin{enumerate}
   \item The Higgs boson mass is in agreement with experiment
@@ -436,7 +436,7 @@
 
 \begin{frame}{How heavy can the lightest stop be?}
   Chose $\tan\beta = 1$ to make $(m_h^2)_{\text{tree}} = 0$
-  $\Rightarrow$ largest corrections from stops are required.
+  $\Rightarrow$ largest corrections from stops are required
   \\[1em]
   \begin{center}
     \begin{tabular}{cc}
@@ -455,7 +455,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Uncertainty estimate}
+\begin{frame}[noframenumbering]{Uncertainty estimate in \texttt{FlexibleSUSY}}
   Fixed-order calculation (\texttt{FS+H}):
   \begin{itemize}
   \item vary $Q_\pole \in [\MS/2, 2\MS]$
@@ -469,138 +469,12 @@
   \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
   \item $y_t^{\SM}(\MS)$ vs.\ $y_t^{\MSSM}(\MS)$ \hfill [SUSY uncertainty]
   \end{itemize}
-  Hybrid calculation (\texttt{FlexibleEFTHiggs}):
+  Hybrid calculation (\texttt{FlexibleEFTHiggs-2.0}):
   \begin{itemize}
   \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
   \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
   \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
   \end{itemize}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $g_3(M_Z)$}
-  \emph{Input:} \ \ $\alpha_{\text{s}}^{\SM(5)}(M_Z) = 0.1185$\\[1em]
-  $\rightarrow$
-  \begin{align*}
-    \alpha_{\text{s}}(M_Z) &=
-    \frac{\alpha_{\text{s}}^{\SM(5)}(M_Z)}{1
-      - \Delta\alpha_{\text{s}}^{1L}(M_Z)
-      - \Delta\alpha_{\text{s}}^{2L}(M_Z)
-      - \Delta\alpha_{\text{s}}^{3L}(M_Z)
-    }
-  \end{align*}
-  \\\vspace{2em}
-  SM: $O(\as + \as^2 + \as^3)$ \mycite{9305305, 9707474, 9708255, 0004189}\\
-  split-MSSM: $O(\as)$ \mycite{9305305, 9707474, 9708255, 0004189}\\
-  MSSM: $O(\as + \as^2 + (\at + \ab)\as)$ \mycite{0509048, 0810.5101, 1009.5455}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $m_t(M_Z)$}
-  \emph{Input:} \ \ $M_t = 173.34\eh{GeV}$\\[1em]
-  $\rightarrow$
-  \begin{align*}
-    m_{t}(M_Z) &= M_t +
-    \re\Sigma_{t}^{S}(M_Z) \\
-    &\phantom{={}} + M_t \Big[ \re\Sigma_{t}^{L}(M_Z) +
-    \re\Sigma_{t}^{R}(M_Z) \\
-    &\phantom{={}} \qquad\quad
-      + \Delta m_t^{1L} + \Delta m_t^{2L} + \Delta m_t^{3L} \Big]
-  \end{align*}
-  SM: $O(\text{1L} + \as^2 + \as^3)$ \mycite{9912391, 1205.2892} \\
-  split-MSSM: $O(\text{1L} + \as^2)$ \mycite{1312.5220}\\
-  MSSM: $O(\text{1L} + \as^2)$ \mycite{0210258, 0507139}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $m_b^{\MSSM}(M_Z)$}
-  \emph{Input:} \ \ $m_b^{\SM(5),\MSbar}(m_b) = 4.18\eh{GeV}$\\[1em]
-  $\rightarrow$ running to $m_b^{\SM(5),\MSbar}(M_Z)$ at $O(\aem + \as^3)$\\[1em]
-  $\rightarrow$ convert to $m_b^{\SM(5),\DRbar}(M_Z)$ at $O(\aem + \as)$\\[1em]
-  $\rightarrow$
-  \begin{align*}
-    m_b(M_Z) &= \frac{m_b^{\SM(5),\DRbar}(M_Z)}{1 - \Delta m_b^{1L} - \Delta m_b^{2L}} \,, \\
-    \Delta m_b^{1L} &= \Sigma_{b}^S(p^2=(m_b^{\SM(5)})^2,M_Z)/m_b\\
-           &\phantom{={}}+ \Sigma_{b}^L(p^2=(m_b^{\SM(5)})^2,M_Z)
-             + \Sigma_{b}^R(p^2=(m_b^{\SM(5)})^2,M_Z)\\
-    \Delta m_b^{2L} &= \Delta m_b^{2L,\text{dec}} - \frac{\as}{3\pi}\Delta m_b^{1L}
-  \end{align*}
-  with $\Delta m_b^{2L,\text{dec}}$ at $O(\as^2)$ from \mycite{0707.0650, 0810.5101}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $v(M_Z)$}
-  \emph{Input:} \ \ $M_Z = 91.1876\eh{GeV}$\\[1em]
-  $\rightarrow$
-  \begin{align*}
-    v(M_Z) &= \frac{2 m_Z(M_Z)}{\sqrt{g_Y^2(M_Z) + g_2^2(M_Z)}} \\
-    m_Z(M_Z) &= \sqrt{M_Z^2 + \Pi_Z^{1L}(p^2=M_Z^2,Q=M_Z)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $g_1$ and $g_2$ as in BPMZ \mycite{9606211}}
-  \emph{Input:} \ \ $\aem^{\SM(5)}(M_Z) = 1/127.916$, $G_F = 1.1663787\cdot 10^{-5}\text{GeV}^2$\\[1em]
-  $\rightarrow$
-  \begin{align*}
-  \aem(M_Z) &=
-  \frac{\aem^{\SM(5)}(M_Z)}{1 - \Delta\aem^{1L}(M_Z)} 
-  \end{align*}
-  \begin{align*}
-    g_1(M_Z) &= \sqrt{\frac{5}{3}} \frac{\sqrt{4\pi\aem(M_Z)}}{\cos\theta_w(M_Z)} \,, &
-    g_2(M_Z) &= \frac{\sqrt{4\pi\aem(M_Z)}}{\sin\theta_w(M_Z)}
-  \end{align*}
-  \begin{align*}
-  \sin^2\theta_w \cos^2\theta_w =
-  \frac{\pi\,\aem}{\sqrt{2} M_Z^2 G_F (1-\delta_r)}
-  \end{align*}
-  \begin{align*}
-    \delta_r &= \hat\rho \frac{\re\Sigma_{W,T}(0)}{M_W^2} -
-    \frac{\re\Sigma_{Z,T}(M_Z^2)}{M_Z^2} + \delta_{\text{VB}} + \delta_r^{(2)} \\
-    \hat\rho &= \frac{1}{1-\Delta\hat\rho} , \qquad \Delta\hat\rho
-    = \re\Biggl[ \frac{\Sigma_{Z,T}(M_Z^2)}{\hat\rho\,M_Z^2} -
-    \frac{\Sigma_{W,T}(M_W^2)}{M_W^2}\Biggr] + \Delta\hat\rho^{(2)}
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $M_h^2$ in the SM and split-MSSM}
-  \emph{SM}:
-  Iterate until $p^2 = M_h^2$:
-  \begin{align*}
-    M_h^2 &= m_h^2 + (\Delta m_h^2)_{1L}(p^2)
-            + (\Delta m_h^2)_{2L}(p^2) +(\Delta m_h^2)_{3L}
-  \end{align*}
-  $O(\text{1L} + (\at+\as)\at + (\at^2 + \at\as + \as^2)\at)$\\
-  \mycite{1205.6497, 1504.05200, 1407.4336}\\
-  Note: $O(\at^3)$ incomplete due to missing $p^2$-dependence of $O(\at^2)$
-  \\[2em]
-  \emph{split-MSSM}:
-  Iterate until $p^2 = M_h^2$:
-  \begin{align*}
-    M_h^2 &= m_h^2 + (\Delta m_h^2)_{1L}(p^2)
-            + (\Delta m_h^2)_{2L} +(\Delta m_h^2)_{3L}
-  \end{align*}
-  split-MSSM: $O(\text{1L} + (\at+\as)\at + \at\as^2)$
-  \mycite{1205.6497, 1312.5220}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $M_h^2$ in the MSSM}
-  Iterate until $p^2 = M_h^2$:
-  \begin{align*}
-    M_h^2 &= \Eigenvalue\Big[
-            m_h^2 + (\Delta m_h^2)_{1L}(p^2)
-            + (\Delta m_h^2)_{2L} + (\Delta m_h^2)_{3L}
-            \Big]
-  \end{align*}
-  MSSM: $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2 + \atau^2 + (\at + \ab)\as^2)$\\
-  \hspace{2em} \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}
-\end{frame}
-
-\begin{frame}[noframenumbering]{Determination of $\lambda$ in the FlexibleEFTHiggs\\ \mycite{1609.00371, 1703.03267, 1710.03760}}
-  Matching condition:
-  \begin{align*}
-    (M_h^2)_{\SM} &\overset{!}{=} (M_h^2)_{\MSSM} \qquad \text{at 1L at } Q = \MS
-  \end{align*}
-  With $(M_h^2)_{\SM} = \lambda v^2 + (\Delta m_h^2)_{\SM}$\\
-  $\Rightarrow$
-  \begin{align*}
-    \lambda(\MS) &= \frac{1}{v^2} \left[ (M_h^2)_{\MSSM} - (\Delta m_h^2)_{\SM} \right]
-  \end{align*}
 \end{frame}
 
 \end{document}
