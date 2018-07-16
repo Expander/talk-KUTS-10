@@ -13,7 +13,7 @@
 \usepackage{feynmp}
 \DeclareGraphicsRule{*}{mps}{*}{} 
 \DeclareGraphicsExtensions{.pdf}
-\usepackage{amsmath,amssymb,amstext,amsfonts} % mathrsfs
+\usepackage{amsmath,amssymb,amstext,amsfonts,ulem} % mathrsfs
 \usepackage{array,booktabs,tabularx}
 \usepackage{tikz,tikz-uml,pgf-pie}
 \usetikzlibrary{shapes,calc,arrows,positioning}
@@ -353,7 +353,7 @@
   \begin{tikzpicture}
     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
     \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
-      $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\ab\atau + \atau^2)$};
+      $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\ab\atau + \atau^2)$ + \sout{$O(\at\as^2)$}};
     \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
       $M_h^2$ at $O(\text{1L} + (\at+\ab)\as + (\at + \ab)^2)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2 + \at\as^3)$
     };
