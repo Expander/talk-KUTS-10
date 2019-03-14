@@ -136,6 +136,7 @@
 \newcommand{\DMhHSSUSYytMSSM}{\ensuremath{\Delta M_h^{(y_t^\MSSM)}}}
 \newcommand{\DMhEFT}{\ensuremath{\Delta M_h^{(v^2/\MS^2)}}}
 \def\HSSUSY{\texttt{HSSUSY}}
+\def\SUSYHD{\texttt{SusyHD}}
 
 % set look of slides
 \usetheme{Madrid}
@@ -155,12 +156,11 @@
 \makeatother
 \usecolortheme{tud}
 
-\title{Uncertainties of $M_h$ in the MSSM:\\
-  fixed-order vs.\ EFT predictions\\ --- \\{}[1804.09410]}
+\title{Update on the Standard Model Uncertainty}
 
-\author[Alexander Voigt]{Benjamin Allanach, \underline{Alexander Voigt}}
+\author[Alexander Voigt]{Harun Acaroglu, \underline{Alexander Voigt}}
 
-\date{KUTS-9 Würzburg\\[1em] 16--18/07/2018}
+\date{KUTS-10 Dresden\\[1em] 08--10/04/2019}
 
 % \institute[Aachen]{RWTH Aachen}
 \subject{FlexibleSUSY,MSSM,Higgs,EFT}
@@ -263,86 +263,38 @@
   \tableofcontents
 \end{frame}
 
-\section{Uncertainty estimate of the $M_h$ prediction}
-\subsection{Fixed-order calculation}
+\section{Motivation}
 
-\begin{frame}{Fixed-order calculation (\texttt{SOFTSUSY})}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Contents}
+  \tableofcontents[currentsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Motivation --- SM uncertainty in \SUSYHD}
   \begin{center}
-  \begin{tikzpicture}
-    \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
-    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
-      $M_h^2$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\atau^2) + O((\at + \ab)\as^2)$};
-    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.2cm,black]{MSSM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
-      $y_{t,b}$ at $O(\text{1L} + \as^2)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + (\at + \ab)\as)$};
-    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{3L RGEs} (-1,4);
-  \end{tikzpicture}
+    \includegraphics[width=\textwidth]{plots/kuts-10/SUSYHD-uncertainties}
   \end{center}
-  $M_h^2$: \mycite{0105096, 0112177, 0212132, 0206101, 0305127, 1708.05720}\\
-  $y_{t,b}$: \mycite{0210258, 0507139, 0707.0650, 0912.4652},
-  $g_3$: \mycite{0509048, 0810.5101, 1009.5455}\\
-  $\aem$: \mycite{1411.7040}, 
-  $\beta_i$: \mycite{0308231, 0408128}
+  \flushright Image taken from \bigcite{1504.05200}
 \end{frame}
 
-\begin{frame}{Uncertainty estimate of the fixed-order calculation}
-  Inspired by \bigcite{1609.00371}, we consider 5 sources of
-  uncertainty:
-  \begin{align*}
-    \DMhQpole &= \max_{\Qpole\in[\MS/2,2\MS]}\left|M_h(\Qpole) - M_h(\MS)\right| & \text{\mycite{1609.00371}} \\
-    \DMhQmatch &= \max_{\Qmatch\in[M_Z/2,2M_Z]}\left|M_h(\Qmatch) - M_h(M_Z)\right| & \text{\textcolor{darkgreen}{New!}} \\
-    \DMhMt &= \left|M_h(m_t^{(1)}) - M_h(m_t^{(2)})\right| & \text{\mycite{1609.00371}} \\
-    \DMhAlphaS &= \left| M_h(\as^{(1)}) - M_h(\as^{(2)}) \right| & \text{\textcolor{darkgreen}{New!}} \\
-    \DMhAlphaEm &= \left| M_h(\aem^{(1)}) - M_h(\aem^{(2)}) \right| & \text{\textcolor{darkgreen}{New!}}
-  \end{align*}
-  Combination:
-  \begin{align*}
-    \DMh &= \DMhQpole + \DMhQmatch + \DMhMt + \DMhAlphaS + \DMhAlphaEm 
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Uncertainty estimate of the fixed-order calculation}
-  Calculation of $m_t$ in two different ways as proposed in
-  \bigcite{1609.00371}:
-  \begin{align*}
-    m_t^{(1)} &=
-                M_t + \widetilde{\Sigma}_t^{(1),S} +
-                M_t \left[
-                \widetilde{\Sigma}_t^{(1),L} +
-                \widetilde{\Sigma}_t^{(1),R}
-                \right] \\
-              &\phantom{={}} + M_t
-                \left[\widetilde{\Sigma}_t^{(1),\SQCD}
-                + \widetilde{\Sigma}_t^{(2),\SQCD}
-                + \left(\widetilde{\Sigma}_t^{(1),\SQCD}\right)^2
-                \right]\\
-    m_t^{(2)} &=
-                M_t + \widetilde{\Sigma}_t^{(1),S} +
-                m_t \left[
-                \widetilde{\Sigma}_t^{(1),L} +
-                \widetilde{\Sigma}_t^{(1),R}
-                \right] \nonumber \\
-              &\phantom{={}} +
-                m_t
-                \left[\widetilde{\Sigma}_t^{(1),\SQCD} +
-                \widetilde{\Sigma}_t^{(2),\SQCD}
-                \right]
-  \end{align*}
-  Calculation of $\as$ and $\aem$ in two different ways:
-  \begin{align*}
-    \as^{(1)}  &= \frac{\as^{\SM(5)}}{1 - \Delta^{(1)}\as - \Delta^{(2)}\as}\\
-    \as^{(2)}  &= \as^{\SM(5)} \left[1 + \Delta^{(1)}\as + (\Delta^{(1)}\as)^2 + \Delta^{(2)}\as\right]
-  \end{align*}
-\end{frame}
-
-\begin{frame}{Uncertainty estimate of the fixed-order calculation}
+\begin{frame}{Motivation --- SM uncertainty in \HSSUSY}
   \begin{center}
-    \includegraphics[width=0.7\textwidth]{plots/kuts-9/SS_TB-20_Xt--sqrt6_individual}
+    \includegraphics[width=0.6\textwidth]{plots/kuts-9/HSSUSY_TB-20_Xt--sqrt6_individual}
   \end{center}
+  \flushright Image taken from \bigcite{1804.09410}
 \end{frame}
 
-\subsection{EFT calculation}
+\section{Update on the Standard Model Uncertainty}
+\subsection{EFT calculation in \fs (\texttt{HSSUSY})}
 
-\begin{frame}{EFT calculation from \fs (\texttt{HSSUSY})}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{EFT calculation in \fs (\texttt{HSSUSY})}
   \begin{center}
     \includegraphics[width=0.8\textwidth]{images/FS-HSSUSY.png}
   \end{center}
@@ -370,8 +322,7 @@
 \end{frame}
 
 \begin{frame}{Uncertainty estimate of the EFT calculation}
-  Inspired by \bigcite{1407.4081, 1504.05200, 1609.00371}, we consider
-  5 sources of uncertainty:
+  \bigcite{1804.09410} considered 5 sources of uncertainty:
   \begin{align*}
     \DMhQpole &= \max_{\Qpole\in[M_t/2,2M_t]}\left|M_h(\Qpole) - M_h(M_t)\right| & \text{\mycite{1609.00371}} \\
     \DMhQmatch &= \max_{\Qmatch\in[\MS/2,2\MS]}\left|M_h(\Qmatch) - M_h(\MS)\right| & \text{\mycite{1407.4081}} \\
@@ -392,6 +343,8 @@
   \end{center}
 \end{frame}
 
+\subsection{Improving on the Standard Model uncertainty}
+
 \section{When should the EFT be used?}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -408,46 +361,6 @@
     $\DMh \overset{!}{=} \DMhHSSUSY$\\[0.5em]
     $\Rightarrow$ $\MS^{\text{equal}} = 1.0$--$1.3\TeV$ for
     small/large $\tan\beta$ and/or $X_t$
-  \end{center}
-\end{frame}
-
-\section{How heavy can the lightest stop be?}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\begin{frame}{Contents}
-  \tableofcontents[currentsection]
-\end{frame}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}{How heavy can the lightest stop be?}
-  Derive an upper bound on $m_{\tilde{t}_1}$ from the MSSM parameter
-  region where
-  \begin{enumerate}
-  \item the Higgs boson mass is in agreement with experiment
-    (including the theoretical uncertainty from the EFT calculation):
-    \begin{align*}
-      M_h = 125.09\GeV \pm \Delta M_h^{(\texttt{HSSUSY})}
-    \end{align*}
-  \item there is no CCB minimum that is deeper than the EW vacuum
-    \bigcite{1407.4081}:
-    \begin{align*}
-      \frac{X_t^2}{m_{\tilde{Q}_3} m_{\tilde{u}_3}} < \left(4 - \frac{1}{\sin^2\beta}\right) \left(\frac{m_{\tilde{Q}_3}}{m_{\tilde{u}_3}} + \frac{m_{\tilde{u}_3}}{m_{\tilde{Q}_3}}\right)
-    \end{align*}
-  \end{enumerate}
-\end{frame}
-
-\begin{frame}{How heavy can the lightest stop be?}
-  Chose $\tan\beta = 1$ so that $(m_h^2)_{\text{tree}} = 0$
-  $\Rightarrow$ largest corrections from stops are required
-  \\[1em]
-  \begin{center}
-    \begin{tabular}{cc}
-      $\tan\beta = 1$ & $\tan\beta = 1.2$ \\
-      \includegraphics[width=0.49\textwidth]{{{plots/kuts-9/TB-1}}} &
-      \includegraphics[width=0.49\textwidth]{{{plots/kuts-9/TB-1.2}}} \\
-      \textcolor{red}{$m_{\tilde{t}_1} \leq 3.7\cdot 10^{11}\GeV$} &
-      $m_{\tilde{t}_1} \leq 9.6\cdot 10^{10}\GeV$
-    \end{tabular}
   \end{center}
 \end{frame}
 
@@ -477,26 +390,6 @@
   \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
   \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
   \end{itemize}
-\end{frame}
-
-\begin{frame}[noframenumbering]{$M_h$ at 1-loop and scale variation}
-  \begin{align*}
-    M_{h}^2 = \frac{1}{4} (g_Y^2 + g_2^2) v^2 \cos^2 2 \beta + 
-    \frac{6 y_t^4 v^2}{(4\pi)^2} \left[ \ln \frac{\MS^2}{m_t^2} +
-      \frac{X_t^2}{\MS^2} - \frac{X_t^4}{12 \MS^4}\right]
-  \end{align*}
-  \begin{align*}
-    (4\pi)^2 \beta_{y_t} &=
-                           -\frac{13}{15} g_1^2 y_t - 3 g_2^2 y_t - \frac{16}{3} g_3^2 y_t + 6 y_t^3 \approx -2 \\
-                         &= y_t \left( 6 y_t^2 - 5.33 g_3^2\right) \approx 0 \quad\text{for}\quad g_1 = g_2 = 0
-  \end{align*}
-\end{frame}
-
-\begin{frame}[noframenumbering]{$M_h$ scale variation}
-  \begin{center}
-    \includegraphics[width=\textwidth,bb=0 0 440 300,clip]{{{plots/kuts-9/scan_Q}}}
-  \end{center}
-  square: 1L, triangle: 2L, circle: 3L
 \end{frame}
 
 \end{document}

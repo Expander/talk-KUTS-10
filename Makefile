@@ -1,7 +1,7 @@
 # http://www.gnu.org/software/make/manual/make.html
 
 OUTFILENAME := talk.pdf
-PLOTS       := plots/kuts-9/*.pdf
+PLOTS       := plots/kuts-10/*.pdf
 
 TEXDIRS     := $(PLOTSDIR)
 BIBTEX      := bibtex
