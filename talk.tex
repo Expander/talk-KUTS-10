@@ -300,25 +300,25 @@
   \end{center}
 \end{frame}
 
-\begin{frame}{EFT calculation from \fs (\texttt{HSSUSY})}
+\begin{frame}{EFT calculation in \fs (\texttt{HSSUSY})}
   \begin{center}
   \begin{tikzpicture}
     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
     \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{
-      $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\ab\atau + \atau^2)$ + \sout{$O(\at\as^2)$}};
+      $\lambda$ at $O(\text{1L} + (\at+\ab)\as + (\at+\ab)^2)$\\ \ \ \ \ \ + $O(\ab\atau + \atau^2)$ + $O(\at\as^2)$};
     \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{
-      $M_h^2$ at $O(\text{1L} + (\at+\ab)\as + (\at + \ab)^2)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2 + \at\as^3)$
+      $M_h^2$ at $O(\text{1L} + (\at+\ab)\as + (\at + \ab)^2)$\\ \ \ \ \ \ \ + $O(\at^3 + \at^2\as + \at\as^2)$ + $O(\at\as^3)$
     };
     \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
       $y_t$ at $O(\text{1L} + \as^2 + \as^3)$, $v$ at 1L, \\ $g_3$ at $O(\text{1L} + \as^2 + \as^3)$};
-    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{4L RGEs} (-1,4);
+    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{5L RGEs} (-1,4);
   \end{tikzpicture}
   \end{center}
-  $\lambda$: \mycite{1407.4081, 1504.05200, 1703.08166}
+  $\lambda$: \mycite{1407.4081, 1504.05200, 1703.08166, 1807.03509}
   $M_h^2$: \mycite{1205.6497, 1504.05200, 1407.4336, 1508.00912}\\
   $y_t$: \mycite{9912391, 1205.2892},
   $g_3$: \mycite{9305305, 9707474, 9708255, 0004189}\\
-  $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364, 1508.00912, 1508.02680, 1604.00853}
+  $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364, 1508.00912, 1508.02680, 1604.00853, 1606.08659}
 \end{frame}
 
 \begin{frame}{Uncertainty estimate of the EFT calculation}
