@@ -388,7 +388,7 @@
   \end{center}
 \end{frame}
 
-\begin{frame}[noframenumbering]{References for loop corrections}
+\begin{frame}[noframenumbering]{References for loop corrections used in \HSSUSY}
   $\lambda$: \mycite{1407.4081, 1504.05200, 1703.08166, 1807.03509}\\
   $M_h$: \mycite{1205.6497, 1504.05200, 1407.4336, 1508.00912}\\
   $y_t$: \mycite{9911434, 9912391, 1604.01134}\\
@@ -396,26 +396,19 @@
   $\beta_i$: \mycite{1201.5868, 1210.6873, 1212.6829, 1205.2892, 1303.4364, 1508.00912, 1508.02680, 1604.00853, 1606.08659}
 \end{frame}
 
-\begin{frame}[noframenumbering]{Uncertainty estimate in \texttt{FlexibleSUSY}}
-  Fixed-order calculation (\texttt{FS+H}):
-  \begin{itemize}
-  \item vary $Q_\pole \in [\MS/2, 2\MS]$
-  \item $\alpha^{1L}_s(M_Z)$ vs.\ $\alpha^{2L}_s(M_Z)$
-  \end{itemize}
-  EFT calculation (\texttt{HSSUSY}):
-  \begin{itemize}
-  \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
-  \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
-  \item $\lambda(\MS)$ vs.\ $\lambda(\MS) + v^2/\MS^2$ \hfill [EFT uncertainty]
-  \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
-  \item $y_t^{\SM}(\MS)$ vs.\ $y_t^{\MSSM}(\MS)$ \hfill [SUSY uncertainty]
-  \end{itemize}
-  Hybrid calculation (\texttt{FlexibleEFTHiggs-2.0}):
-  \begin{itemize}
-  \item vary $Q_\pole \in [M_t/2, 2 M_t]$ \hfill [SM uncertainty]
-  \item $y_t^{2L}(M_Z)$ vs.\ $y_t^{3L}(M_Z)$ \hfill [SM uncertainty]
-  \item vary $Q_\match \in [\MS/2, 2 \MS]$ \hfill [SUSY uncertainty]
-  \end{itemize}
+\begin{frame}[noframenumbering]{Uncertainty estimate of the fixed-order calculation}
+  \bigcite{1804.09410} considered 5 sources of uncertainty:
+  \begin{align*}
+    \DMhQpole &= \max_{\Qpole\in[\MS/2,2\MS]}\left|M_h(\Qpole) - M_h(\MS)\right| & \text{\mycite{1609.00371}} \\
+    \DMhQmatch &= \max_{\Qmatch\in[M_Z/2,2M_Z]}\left|M_h(\Qmatch) - M_h(M_Z)\right| & \text{\mycite{1804.09410}} \\
+    \DMhMt &= \left|M_h(m_t^{(1)}) - M_h(m_t^{(2)})\right| & \text{\mycite{1609.00371}} \\
+    \DMhAlphaS &= \left| M_h(\as^{(1)}) - M_h(\as^{(2)}) \right| & \text{\mycite{1804.09410}} \\
+    \DMhAlphaEm &= \left| M_h(\aem^{(1)}) - M_h(\aem^{(2)}) \right| & \text{\mycite{1804.09410}}
+  \end{align*}
+  Combination:
+  \begin{align*}
+    \DMh &= \DMhQpole + \DMhQmatch + \DMhMt + \DMhAlphaS + \DMhAlphaEm 
+  \end{align*}
 \end{frame}
 
 \end{document}
