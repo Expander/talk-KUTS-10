@@ -7,23 +7,22 @@ import matplotlib.ticker as tck
 import matplotlib.patches as patches
 import scipy.interpolate
 
-def plot(datafile, datafile2, outfile, title, label_y, range_y, range_x):
+def plot(datafile, outfile, title, label_y, range_y, range_x):
     plt.rcParams['text.usetex'] = True
     plt.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 
     try:
         data  = np.genfromtxt(datafile)
-        data2  = np.genfromtxt(datafile2)
     except:
         print "Error: could not load numerical data from file"
         exit
 
-    MS             	 = data[:,0]
-    mt       		 = data[:,1]
-    mtas2    	     = mt-mt
-    mtas2as3     	 = data[:,2]-mt
-    mtas2as4         = data[:,3]-mt
-    mtas2asatat2     = data2[:,4]-mt
+    MS               = data[:,0]
+    mt       	     = data[:,1]
+    mtas2    	     = mt - mt
+    mt2L             = data[:,2] - mt
+    mt3L             = data[:,3] - mt
+    mt4L             = data[:,4] - mt
 
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif', weight='normal')
@@ -42,19 +41,15 @@ def plot(datafile, datafile2, outfile, title, label_y, range_y, range_x):
     plt.ylabel(label_y)
     plt.title(title)
 
-    plt.plot(MS, mtas2, 'k:', linewidth=1.0)
-    plt.plot(MS, mtas2as3, 'b-.', linewidth=1.0)
-    plt.plot(MS, mtas2as4, 'g--' , linewidth=1.0)
-    plt.plot(MS, mtas2asatat2, 'r-' , linewidth=1.0)
-    # plt.plot(MS, DMhytMSSM , 'g:' , linewidth=1.0)
-    # plt.plot(MS, DMhEFT    , 'g:' , linewidth=1.0)
-    # plt.plot(MS, DMhytSMflvsSp , linewidth=1.0, color='orange', dashes=(2,1,2,3))
-    # plt.plot(MS, DMhEFT    , linewidth=1.0, color='darkred', dashes=(1,1,1,1,3,1))
+    plt.plot(MS, mtas2, 'k:' , linewidth=1.0)
+    plt.plot(MS, mt2L , 'g--', linewidth=1.0)
+    plt.plot(MS, mt3L , 'b-.', linewidth=1.0)
+    plt.plot(MS, mt4L , 'r-' , linewidth=1.0)
 
     leg = plt.legend([r'$\mathcal{O}(\alpha_s^2)$',
                       r'$\mathcal{O}(\alpha_s^2+\alpha_s\alpha_t+\alpha_t^2)$',
-                      r'$\mathcal{O}(\alpha_s^2+\alpha_s^3)$',
-                      r'$\mathcal{O}(\alpha_s^2+\alpha_s^4)$'],
+                      r'$\mathcal{O}(\alpha_s^2+\alpha_s\alpha_t+\alpha_t^2+\alpha_s^3)$',
+                      r'$\mathcal{O}(\alpha_s^2+\alpha_s\alpha_t+\alpha_t^2+\alpha_s^3+\alpha_s^4)$'],
                      loc='best', fontsize=9, fancybox=None, framealpha=None)
     leg.get_frame().set_alpha(1.0)
     leg.get_frame().set_edgecolor('black')
@@ -70,8 +65,7 @@ def plot(datafile, datafile2, outfile, title, label_y, range_y, range_x):
 import sys
 arg1 = sys.argv[1]
 arg2 = sys.argv[2]
-arg3 = sys.argv[3]
 
 # plot(datafile, outfile, title, label_y, range_y, range_x):
 
-plot(arg1, arg2, arg3, r'$X_t = -\sqrt{6}M_S, \tan\beta = 20$', r'$\Delta M_h/\,\mathrm{GeV}$', [-0.5,0.5], [500,10000])
+plot(arg1, arg2, r'$X_t = -\sqrt{6}M_S, \tan\beta = 20$', r'$M_h/\,\mathrm{GeV}$', [-0.5,0.5], [500,10000])
