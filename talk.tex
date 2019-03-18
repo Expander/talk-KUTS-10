@@ -121,6 +121,7 @@
 \newcommand{\atau}{\alpha_\tau}
 \newcommand{\as}{\alpha_s}
 \newcommand{\aem}{\alpha_\text{em}}
+\newcommand{\Loop}{\ensuremath{\ell}}
 \newcommand{\avnote}[1]{\textcolor{blue}{[#1]}}
 \DeclareMathOperator{\Eigenvalue}{Eigenvalue}
 \newcommand{\SQCD}{\ensuremath{\scalefont{.8}\text{SQCD}}}
@@ -318,7 +319,7 @@
   \centering
   \begin{tabular}{llllll}
     \toprule
-               & 1L & 2L & 3L & 4L & 5L\\
+               & 1\Loop & 2\Loop & 3\Loop & 4\Loop & 5\Loop\\
     \midrule
     $\lambda$  & full & $(\at+\ab)\as$, & $\at\as^2$ & -- & -- \\
                &      & $(\at+\ab)^2$, \\
@@ -362,25 +363,31 @@
   \end{center}
 \end{frame}
 
-\subsection{Improving on the Standard Model uncertainty}
+\subsection{Adding $O(\at\as, \at^2)$ and $O(\as^4)$ corrections to $m_t$}
 
-\begin{frame}{$O(\at\as, \at^2)$ and $O(\as^4)$ corrections to $m_t$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}{Adding $O(\at\as, \at^2)$ and $O(\as^4)$ corrections to $m_t$}
   Adding 2-loop corrections of $O(\at\as, \at^2)$ \bigcite{1604.01134}
   and $O(\as^4)$ \bigcite{1508.00912}:
 \begin{align*}
   m_t &= M_t
-  + \Sigma_{S,\text{non-QCD}}^{(1)}
-  + \textcolor{red}{\Sigma_{S,\at\as}^{(2)}}
-  + \textcolor{red}{\Sigma_{S,\at^2}^{(2)}} \\
-  &\phantom{={}} + M_t \Big[ \Sigma_{L,\text{non-QCD}}^{(1)} + \Sigma_{R,\text{non-QCD}}^{(1)}
-    + \Delta m_{\text{QCD}}^{(1)} \\
+  + \Sigma_{S,\text{non-QCD}}^{(1\Loop)}
+  + \textcolor{red}{\Sigma_{S,\at\as}^{(2\Loop)}}
+  + \textcolor{red}{\Sigma_{S,\at^2}^{(2\Loop)}} \\
+  &\phantom{={}} + M_t \Big[ \Sigma_{L,\text{non-QCD}}^{(1\Loop)} + \Sigma_{R,\text{non-QCD}}^{(1\Loop)}
+    + \Delta m_{\as}^{(1\Loop)} \\
   &\phantom{={} + M_t \Big[}
-    + \Delta m_{\text{QCD}}^{(2)}
-    + \textcolor{red}{\Delta m_{\at\as}^{(2)}}
-    + \textcolor{red}{\Delta m_{\at^2}^{(2)}} \\
+    + \Delta m_{\as^2}^{(2\Loop)}
+    + \textcolor{red}{\Delta m_{\at\as}^{(2\Loop)}}
+    + \textcolor{red}{\Delta m_{\at^2}^{(2\Loop)}} \\
   &\phantom{={} + M_t \Big[}
-    + \Delta m_{\text{QCD}}^{(3)}
-    + \textcolor{red}{\Delta m_{\text{QCD}}^{(4)}}
+    + \Delta m_{\as^3}^{(3\Loop)}
+    + \textcolor{red}{\Delta m_{\as^4}^{(4\Loop)}}
   \Big]
 \end{align*}
 at $p^2 = M_t^2$ and  $Q = M_Z$.
@@ -415,11 +422,19 @@ at $p^2 = M_t^2$ and  $Q = M_Z$.
   captures the main effect of missing 4-loop corrections to $M_h$.
 \end{frame}
 
+\subsection{Update of the SM uncertainty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{frame}{Contents}
+  \tableofcontents[currentsection,currentsubsection]
+\end{frame}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}{Update of SM uncertainty}
   \centering
   \begin{tabular}{llllll}
     \toprule
-               & 1L & 2L & 3L & 4L & 5L\\
+               & 1\Loop & 2\Loop & 3\Loop & 4\Loop & 5\Loop\\
     \midrule
     $\lambda$  & full & $(\at+\ab)\as$, & $\at\as^2$ & -- & -- \\
                &      & $(\at+\ab)^2$, \\
