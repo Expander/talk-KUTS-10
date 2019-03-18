@@ -127,6 +127,7 @@
 \newcommand{\SQCD}{\ensuremath{\scalefont{.8}\text{SQCD}}}
 \newcommand{\Qpole}{\ensuremath{Q_\text{pole}}}
 \newcommand{\Qmatch}{\ensuremath{Q_\text{match}}}
+\newcommand{\Qlow}{\ensuremath{Q_\text{low}}}
 \newcommand{\DMh}{\ensuremath{\Delta M_h^{(\texttt{SS+H})}}}
 \newcommand{\DMhQpole}{\ensuremath{\Delta M_h^{(\Qpole)}}}
 \newcommand{\DMhQmatch}{\ensuremath{\Delta M_h^{(\Qmatch)}}}
@@ -306,11 +307,11 @@
   \begin{center}
   \begin{tikzpicture}
     \path[arrow] (0,0) -- (0,5) node[left]{$Q$};
-    \draw[thick,darkgreen] (0,4) node[left]{$M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{calculate $\lambda$};
-    \draw[thick,dashed,darkgreen] (0,2) node[left]{$M_t$} -- (3,2) node[right,black,text width=8cm]{calculate $M_h(\lambda, v, g_i, y_f)$};
-    \draw[thick,darkgreen] (0,1) node[left]{$M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
+    \draw[thick,darkgreen] (0,4) node[left]{$\Qmatch = M_S$} -- node[above = 0.5cm,black]{MSSM} (3,4) node[right,black,text width=8cm]{calculate $\lambda$};
+    \draw[thick,dashed,darkgreen] (0,2) node[left]{$\Qpole = M_t$} -- (3,2) node[right,black,text width=8cm]{calculate $M_h(\lambda, v, g_i, y_f)$};
+    \draw[thick,darkgreen] (0,1) node[left]{$\Qlow = M_Z$} -- node[above = 1.5cm,black]{SM} node[below = 0.5cm,black]{SM(5)} (3,1) node[right,black,text width=8cm]{
       calculate $y_f$, $g_i$, $v$};
-    \path[arrow,latex-latex,blue] (-1,1) -- node[above,rotate=90]{RG running} (-1,4);
+    \path[arrow,latex-latex,blue] (-2.5,1) -- node[above,rotate=90]{RG running} (-2.5,4);
   \end{tikzpicture}
   \end{center}
 \end{frame}
@@ -406,7 +407,7 @@ at $p^2 = M_t^2$ and  $Q = M_Z$.
   \item 2-loop $O(\at\as + \at^2)$ corrections to $m_t$: $\Delta M_h \lesssim 80\MeV$
   \item 3-loop $O(\at^3)$ corrections to $m_t$: $\Delta M_h \lesssim 400\MeV$
   \item 4-loop $O(\at^4)$ corrections to $m_t$: $\Delta M_h \lesssim 125\MeV$
-  \item 4-loop $\Delta M_h^{(Q_{\text{low}})} \sim 125\MeV$
+  \item 4-loop $\Delta M_h^{(\Qlow)} \sim 125\MeV$
   \end{itemize}
   \vspace*{1em}
   $\Rightarrow$ The uncertainty estimate \bigcite{1504.05200, 1804.09410}
