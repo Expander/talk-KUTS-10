@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-#python plotting script for Fig 2: individual sources of uncertainty in HSSUSY
 
 import numpy as np
 import matplotlib.pyplot as plt
@@ -7,26 +6,25 @@ import matplotlib.ticker as tck
 import matplotlib.patches as patches
 import scipy.interpolate
 
-def plot(datafile, datafile2, outfile, title, label_y, range_y, range_x):
+def plot(datafile, outfile, title, label_y, range_y, range_x):
     plt.rcParams['text.usetex'] = True
     plt.rcParams['text.latex.preamble']=[r"\usepackage{amsmath}"]
 
     try:
-        data  = np.genfromtxt(datafile)
-        data2 = np.genfromtxt(datafile2)
+        data = np.genfromtxt(datafile)
     except:
         print "Error: could not load numerical data from file"
         exit
 
-    MS               = data[:,0]
-    DMhytrepr        = data[:,1]
-    DMhytkorr        = data[:,2]
-    DMhytSMfull      = data[:,3]
-    DMhytSM4l        = data2[:,1]
-    # DMhQmatch   = data[:,5]
-    # DMhytMSSM   = data[:,6]
+    MS          = data[:,0]
+    Mh          = data[:,1]
+    DMhQpole    = data[:,2]
+    DMhQmatch   = data[:,3]
+    DMhytSM     = data[:,4]
+    DMhytMSSM   = data[:,5]
+    DMhEFT      = data[:,6]
 
-    # DMh = DMhQpole + DMhytSM + DMhEFT + DMhQmatch + DMhytMSSM
+    DMh = DMhQpole + DMhytSM + DMhEFT + DMhQmatch + DMhytMSSM
 
     plt.rc('text', usetex=True)
     plt.rc('font', family='serif', weight='normal')
@@ -45,20 +43,22 @@ def plot(datafile, datafile2, outfile, title, label_y, range_y, range_x):
     plt.ylabel(label_y)
     plt.title(title)
 
-    plt.plot(MS, DMhytrepr , 'r-', linewidth=1.0)
-    plt.plot(MS, DMhytkorr , 'b-.', linewidth=1.0)
-    plt.plot(MS, DMhytSMfull   , 'g:' , linewidth=1.0)
-    plt.plot(MS, DMhytSM4l       , 'b--' , linewidth=1.2)
+    plt.plot(MS, DMh       , 'r-' , linewidth=1.2)
+    plt.plot(MS, DMhQpole  , 'b--', linewidth=1.0)
+    plt.plot(MS, DMhQmatch , 'b-.', linewidth=1.0)
+    plt.plot(MS, DMhytSM   , 'g:' , linewidth=1.0)
     # plt.plot(MS, DMhytMSSM , 'g:' , linewidth=1.0)
     # plt.plot(MS, DMhEFT    , 'g:' , linewidth=1.0)
-    # plt.plot(MS, DMhytSMflvsSp , linewidth=1.0, color='orange', dashes=(2,1,2,3))
-    # plt.plot(MS, DMhEFT    , linewidth=1.0, color='darkred', dashes=(1,1,1,1,3,1))
+    plt.plot(MS, DMhytMSSM , linewidth=1.0, color='orange', dashes=(2,1,2,3))
+    plt.plot(MS, DMhEFT    , linewidth=1.0, color='darkred', dashes=(1,1,1,1,3,1))
 
-    leg = plt.legend([r'2l-QCD vs. 3l-QCD',
-                      r'2l-QCD vs. 3l-QCD-SM',
-                      r'2l-complete vs. 3l-QCD-SM',
-                      r'3l-QCD-SM vs. 4l-QCD-SM'],
-                     loc='best', fontsize=9, fancybox=None, framealpha=None)
+    leg = plt.legend([r'combined',
+                      r'$\Delta M_h^{(Q_{\text{pole}})}$',
+                      r'$\Delta M_h^{(Q_{\text{match}})}$',
+                      r'$\Delta M_h^{(y_t^\text{SM})}$',
+                      r'$\Delta M_h^{(y_t^\text{MSSM})}$',
+                      r'$\Delta M_h^{(v^2/M_S^2)}$'],
+                     loc='upper right', fontsize=10, fancybox=None, framealpha=None)
     leg.get_frame().set_alpha(1.0)
     leg.get_frame().set_edgecolor('black')
     plt.ylim(range_y)
@@ -68,13 +68,7 @@ def plot(datafile, datafile2, outfile, title, label_y, range_y, range_x):
     print "saved plot in ", outfile
     plt.close(fig)
 
-
-
-import sys
-arg1 = sys.argv[1]
-arg2 = sys.argv[2]
-arg3 = sys.argv[3]
-
-# plot(datafile, outfile, title, label_y, range_y, range_x):
-
-plot(arg1, arg2, arg3, r'$X_t = -\sqrt{6}M_S, \tan\beta = 20$', r'$\Delta M_h(y_t^\text{SM})/\,\mathrm{GeV}$', [0.269250,0.27], [500,505])
+plot(r'DMh_MS_individual.dat',
+     r'DMh_MS_individual.pdf',
+     r'$X_t = -\sqrt{6}M_S, \tan\beta = 20$',
+     r'$\Delta M_h\,/\,\mathrm{GeV}$', [0,5], [500,10000])
