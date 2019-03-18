@@ -121,7 +121,7 @@
 \newcommand{\atau}{\alpha_\tau}
 \newcommand{\as}{\alpha_s}
 \newcommand{\aem}{\alpha_\text{em}}
-\newcommand{\Loop}{\ensuremath{\ell}}
+\newcommand{\Loop}{\ensuremath{\ell}\xspace}
 \newcommand{\avnote}[1]{\textcolor{blue}{[#1]}}
 \DeclareMathOperator{\Eigenvalue}{Eigenvalue}
 \newcommand{\SQCD}{\ensuremath{\scalefont{.8}\text{SQCD}}}
@@ -346,7 +346,7 @@
   \begin{align*}
     \textcolor{darkgreen}{\DMhQpole} &= \max_{\Qpole\in[M_t/2,2M_t]}\left|M_h(\Qpole) - M_h(M_t)\right| & \text{\mycite{1609.00371}} \\
     \DMhQmatch &= \max_{\Qmatch\in[\MS/2,2\MS]}\left|M_h(\Qmatch) - M_h(\MS)\right| & \text{\mycite{1407.4081}} \\
-    \textcolor{darkgreen}{\DMhHSSUSYytSM} &= \left| M_h(y_t^{\SM,2L}(M_Z)) - M_h(y_t^{\SM,3L}(M_Z)) \right| & \text{\mycite{1504.05200}} \\
+    \textcolor{darkgreen}{\DMhHSSUSYytSM} &= \left| M_h(y_t^{\SM,2\Loop}(M_Z)) - M_h(y_t^{\SM,3\Loop}(M_Z)) \right| & \text{\mycite{1504.05200}} \\
     \DMhEFT &= \left| M_h - M_h(v^2/\MS^2) \right| & \text{\mycite{1504.05200}} \\
     \DMhHSSUSYytMSSM &= \left| M_h - M_h(y_t^\MSSM(\MS)) \right| & \text{\mycite{Bagnaschi,AV,Weiglein}}
   \end{align*}
@@ -397,11 +397,11 @@ at $p^2 = M_t^2$ and  $Q = M_Z$.
   \begin{center}
     \includegraphics[width=\textwidth]{plots/kuts-10/Mh_Qlow_mt2Lvsmt3L4LQCD}
   \end{center}
-  TODO: 3L curve with all 2L terms\\
-  4L curve with all 2L and 3L terms
+  TODO: 3\Loop curve with all 2\Loop terms\\
+  4L curve with all 2\Loop and 3\Loop terms
 \end{frame}
 
-\begin{frame}{Effect of 2L corrections to $m_t$ on $M_h$}
+\begin{frame}{Effect of 2\Loop corrections to $m_t$ on $M_h$}
   \begin{center}
     \includegraphics[width=0.7\textwidth]{plots/kuts-10/DMh_MS_mt3L4LQCD}
   \end{center} 
@@ -417,7 +417,7 @@ at $p^2 = M_t^2$ and  $Q = M_Z$.
   \vspace*{0.5em}
   $\Rightarrow$ The uncertainty estimate \bigcite{1504.05200}
   \begin{align*}
-    \DMhHSSUSYytSM &= \left| M_h(y_t^{\SM,2L}(M_Z)) - M_h(y_t^{\SM,3L}(M_Z)) \right| \sim 400\MeV
+    \DMhHSSUSYytSM &= \left| M_h(y_t^{\SM,2\Loop}(M_Z)) - M_h(y_t^{\SM,3\Loop}(M_Z)) \right| \sim 400\MeV
   \end{align*}
   captures the main effect of missing 4-loop corrections to $M_h$.
 \end{frame}
@@ -460,7 +460,7 @@ at $p^2 = M_t^2$ and  $Q = M_Z$.
   Updated SM uncertainty:
   \begin{align*}
     \DMhQpole &= \max_{\Qpole\in[M_t/2,2M_t]}\left|M_h(\Qpole) - M_h(M_t)\right| \\
-    \DMhHSSUSYytSM &= \left| M_h(y_t^{\SM,\textcolor{red}{3L}}(M_Z)) - M_h(y_t^{\SM,\textcolor{red}{4L}}(M_Z)) \right|
+    \DMhHSSUSYytSM &= \left| M_h(y_t^{\SM,\textcolor{red}{3\Loop}}(M_Z)) - M_h(y_t^{\SM,\textcolor{red}{4L}}(M_Z)) \right|
   \end{align*}
 \end{frame}
 
