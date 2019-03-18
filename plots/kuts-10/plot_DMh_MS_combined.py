@@ -26,7 +26,9 @@ def plot(datafile, datafile2, datafile3, outfile, title, label_y, range_y, range
     DMhytSM     = data[:,4]
     DMhytMSSM   = data[:,5]
     DMhEFT      = data[:,6]
+    FSMS        = data2[:,0]
     FSpH        = data2[:,1]
+    SSMS        = data3[:,0]
     SSpH        = data3[:,1]
     DSS         = data3[:,2]
 
@@ -51,20 +53,20 @@ def plot(datafile, datafile2, datafile3, outfile, title, label_y, range_y, range
     ax.yaxis.set_major_formatter(tck.FormatStrFormatter(r'$%g$'))
     ax.get_yaxis().set_tick_params(which='both',direction='in')
     ax.get_xaxis().set_tick_params(which='both',direction='in')
-    ax.text(540, 125.8, r'ATLAS/CMS $\pm 1 \sigma$', fontsize=7)
-    plt.grid(color='0.5', linestyle='-', linewidth=0.2, dashes=(5,15))
+    ax.text(540, 125.8, r'ATLAS/CMS $\pm 1 \sigma$', fontsize=8)
+    plt.grid(color='0.5', linestyle=':', linewidth=0.2, dashes=(0.5,1.5))
 
     plt.xscale('log')
     plt.xlabel(r'$M_S\,/\,\mathrm{GeV}$')
     plt.ylabel(label_y)
     plt.title(title)
 
-    plt.plot(MS, SSpH, 'r-' , linewidth=1.0)
-    plt.plot(MS, FSpH, 'b--' , linewidth=1.0)
-    plt.plot(MS, Mh, 'k:' , linewidth=1.0)
+    plt.plot(SSMS, SSpH, 'r-' , linewidth=1.2)
+    plt.plot(FSMS, FSpH, 'b--' , linewidth=1.2)
+    plt.plot(MS, Mh, 'k:' , linewidth=1.2)
     plt.fill_between(MS, Mhplus, Mhminus, facecolor='darkorange', alpha=0.5)
-    plt.fill_between(MS, SSpDFS, SSmDFS, facecolor='palevioletred', alpha=0.5)
-    plt.fill_between(MS, MhmDMh, MhpDMh, facecolor='grey', alpha=0.5)
+    plt.fill_between(SSMS, SSpDFS, SSmDFS, facecolor='red', alpha=0.3)
+    plt.fill_between(MS, MhmDMh, MhpDMh, facecolor='black', alpha=0.3)
     # plt.plot(MS, DMhQmatch , 'b-.', linewidth=1.0)
     # plt.plot(MS, DMhytSM   , 'g:' , linewidth=1.0)
     # plt.plot(MS, DMhytMSSM , 'g:' , linewidth=1.0)
