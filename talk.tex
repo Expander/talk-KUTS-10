@@ -323,7 +323,7 @@
                &      & $(\at+\ab)^2$, \\
                &      & $\ab\atau$, $\atau^2$ \\
     $v$        & full & -- & -- & -- & -- \\
-    $y_t$      & full & $\as^2$, \textcolor{red}{$\at\as$}, \textcolor{red}{$\at^2$} & $\as^3$ & $\as^4$ & -- \\
+    $y_t$      & full & $\as^2$, \textcolor{red}{$\at\as$}, \textcolor{red}{$\at^2$} & $\as^3$ & $\textcolor{red}{\as^4}$ & -- \\
     $y_{b,\tau}$ & full & -- & -- & -- & -- \\
     $g_3$      & full & $\as^2$ &  $\as^3$ & -- & -- \\
     $g_{1,2}$   & full & -- & -- & -- & -- \\
@@ -362,6 +362,36 @@
 \end{frame}
 
 \subsection{Improving on the Standard Model uncertainty}
+
+\begin{frame}{$O(\at\as, \at^2)$ and $O(\as^4)$ corrections to $m_t$}
+  Adding 2-loop corrections of $O(\at\as, \at^2)$ \bigcite{1604.01134}
+  and $O(\as^4)$ \bigcite{1508.00912}:
+\begin{align*}
+  m_t &= M_t
+  + \Sigma_{S,\text{non-QCD}}^{(1)}
+  + \textcolor{red}{\Sigma_{S,\at\as}^{(2)}}
+  + \textcolor{red}{\Sigma_{S,\at^2}^{(2)}} \\
+  &\phantom{={}} + M_t \Big[ \Sigma_{L,\text{non-QCD}}^{(1)} + \Sigma_{R,\text{non-QCD}}^{(1)}
+    + \Delta m_{\text{QCD}}^{(1)} \\
+  &\phantom{={} + M_t \Big[}
+    + \Delta m_{\text{QCD}}^{(2)}
+    + \textcolor{red}{\Delta m_{\at\as}^{(2)}}
+    + \textcolor{red}{\Delta m_{\at^2}^{(2)}} \\
+  &\phantom{={} + M_t \Big[}
+    + \Delta m_{\text{QCD}}^{(3)}
+    + \textcolor{red}{\Delta m_{\text{QCD}}^{(4)}}
+  \Big]
+\end{align*}
+at $p^2 = M_t^2$ and  $Q = M_Z$.
+\end{frame}
+
+\begin{frame}{Improving on the Standard Model uncertainty}
+  \begin{center}
+    \includegraphics[width=\textwidth]{plots/kuts-10/Mh_Qlow_mt2Lvsmt3L4LQCD}
+  \end{center}
+  TODO: 3L curve with all 2L terms\\
+  4L curve with all 2L and 3L terms
+\end{frame}
 
 \section{When should the EFT be used?}
 
